@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+struct node
+{
+	int data;
+	node *next;
+};
+class queue
+{
+    node *top;
+	public:
+	queue()
+	{
+		top=NULL;
+	}
+	void enqueue(int value)
+	{
+		node *temp=new node;
+		temp->data=value;
+		temp->next=top;
+		top=temp;
+	}	
+	void display()
+	{
+		node *temp=new node;
+		temp=top;
+		if(top==NULL)
+		{
+			cout<<"queue is empty";
+		}
+		else
+		{
+			while(temp!=NULL)
+			{
+				cout<<temp->data<<"\t";
+				temp=temp->next;
+			}
+		}
+	}
+};
+int main()
+{
+	queue q;
+	q.enqueue(10);
+	q.display();
+}

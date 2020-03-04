@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	int i,j,n,val[100],temp=0;
+	cout<<"Enter n ";
+	cin>>n;
+	cout<<"Enter val of n"<<n;
+	for(i=0;i<n;i++)
+	{
+		cin>>val[i];
+	}
+	for(i=0;i<n-1;i++)
+	{
+		for(j=0;j<n-1;j++)
+		{
+			if(val[j]>val[j+1])
+			{
+				temp=val[j];
+				val[j]=val[j+1];
+				val[j+1]=temp;
+			}
+			
+		}
+	}
+	for(j=0;j<n;j++)
+	{
+		cout<<val[j];
+	}
+	return 0;
+}
